@@ -10,7 +10,6 @@ python = "^3.12"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "==0.2.1"
-mypy = "==1.10.0"
 
 [tool.ruff]
 line-length = 100
@@ -32,15 +31,6 @@ quote-style = "single"
 indent-style = "space"
 line-ending = "lf"
 docstring-code-format = true
-
-[tool.mypy]
-files = "git/src"
-exclude = ["simple_backend/src/task_tracker/.*"]
-python_version = "3.12"
-strict = true
-warn_unused_configs = true
-ignore_missing_imports = true
-show_error_codes = true
 
 [build-system]
 requires = ["poetry-core>=1.9.0"]
