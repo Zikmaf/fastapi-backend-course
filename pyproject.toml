@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "my_project"
+version = "0.1.0"
+description = ""
+authors = []
+license = ""
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "==0.2.1"
+mypy = "==1.10.0"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "app"]
+extend-exclude = [".venv", "venv", "build", "dist", "**pycache**", "migrations"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "W", "I", "UP", "B", "SIM"]
+ignore = []
+
+[tool.ruff.lint.isort]
+known-first-party = ["app", "src"]
+combine-as-imports = true
+force-sort-within-sections = true
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
+line-ending = "lf"
+docstring-code-format = true
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_unused_configs = true
+ignore_missing_imports = true
+show_error_codes = true
+
+[build-system]
+requires = ["poetry-core>=1.9.0"]
+build-backend = "poetry.core.masonry.api"
